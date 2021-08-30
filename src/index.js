@@ -14,7 +14,7 @@ const external = {
 
 const wordpressMatch = new RegExp( `^${ ns }(?!(${ nsExclude.join('|') })).*$` ); // /^@wordpress\/(?!(icons|interface)).*$/;
 
-export default function() {
+const wpResolve = function() {
 	return {
 		name: 'wp-resolve',
 		options: ( options ) => {
@@ -61,3 +61,5 @@ export default function() {
 		}
 	}
 }
+
+export default wpResolve;
