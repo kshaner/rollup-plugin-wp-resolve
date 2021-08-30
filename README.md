@@ -45,3 +45,16 @@ will resolve to:
 * wp.data.useSelect
 * wp.blockEditor.useBlockProps
 * wp.serverSideRender
+
+## 3rd Party Bundled Dependencies
+
+This will also convert the following wordpress bundled dependencies automatically:
+
+```js
+import jQuery from 'jquery';
+import lodash from 'lodash';
+import lodash-es from 'lodash-es';
+import moment from 'moment';
+import ReactDOM from 'react-dom';
+import React from 'react';
+```
