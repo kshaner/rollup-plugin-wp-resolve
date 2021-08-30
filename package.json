@@ -1,0 +1,21 @@
+{
+  "name": "rollup-plugin-wp-resolve",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "A rollup plugin to externalize WordPress dependencies for Gutenberg development",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "rollup",
+    "plugin",
+    "wordpress",
+    "gutenberg"
+  ],
+  "author": "kshaner",
+  "license": "MIT",
+  "dependencies": {
+    "camelcase": "^6.2.0"
+  }
+}
