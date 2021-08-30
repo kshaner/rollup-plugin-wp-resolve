@@ -25,39 +25,38 @@ const wpResolve = function() {
 			options.external = options.external.concat( Object.keys( external ) );
 			options.external.push( wordpressMatch );
 
-			options.output.forEach( ( output ) => {
-				const configGlobals = output.globals;
+			return options;
+		},
+		outputOptions: ( outputOptions ) => {
+			const configGlobals = outputOptions.globals;
 
-				const resolveGlobals = ( id ) => {
-					// options.globals is an object - defer to it
-					if ( typeof configGlobals === 'object' && configGlobals.hasOwnProperty( id ) && configGlobals[ id ] ) {
-						return configGlobals[ id ];
-					}
+			const resolveGlobals = ( id ) => {
+				// options.globals is an object - defer to it
+				if ( typeof configGlobals === 'object' && configGlobals.hasOwnProperty( id ) && configGlobals[ id ] ) {
+					return configGlobals[ id ];
+				}
 
-					// options.globals is a function - defer to it
-					if ( typeof configGlobals === 'function' ) {
-						const configGlobalId = configGlobals( id );
+				// options.globals is a function - defer to it
+				if ( typeof configGlobals === 'function' ) {
+					const configGlobalId = configGlobals( id );
 
-						if ( configGlobalId && configGlobalId !== id ) {
-							return configGlobalId;
-						}
-					}
-
-					// see if it's a static wp external
-					if ( external.hasOwnProperty( id ) && external[ id ] ) {
-						return external[ id ];
-					}
-
-					if ( wordpressMatch.test( id ) ) {
-						// convert @namespace/component-name to namespace.componentName
-						return camelcase( id ).replace( new RegExp( `^${ns}` ), 'wp.' ).replace( /\//g, '.' );
+					if ( configGlobalId && configGlobalId !== id ) {
+						return configGlobalId;
 					}
 				}
 
-				output.globals = resolveGlobals;
-			} );
+				// see if it's a static wp external
+				if ( external.hasOwnProperty( id ) && external[ id ] ) {
+					return external[ id ];
+				}
 
-			return options;
+				if ( wordpressMatch.test( id ) ) {
+					// convert @namespace/component-name to namespace.componentName
+					return camelcase( id ).replace( new RegExp( `^${ns}` ), 'wp.' ).replace( /\//g, '.' );
+				}
+			}
+
+			outputOptions.globals = resolveGlobals;
 		}
 	}
 }
