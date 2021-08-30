@@ -26,5 +26,8 @@
   },
   "dependencies": {
     "camelcase": "^6.2.0"
+  },
+  "devDependencies": {
+    "rollup": "^2.56.3"
   }
 }
