@@ -1,6 +1,6 @@
 {
   "name": "rollup-plugin-wp-resolve",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "A rollup plugin to externalize WordPress dependencies for Gutenberg development",
   "module": "dist/index.mjs",
   "main": "dist/index.cjs",
@@ -27,8 +27,5 @@
   },
   "dependencies": {
     "camelcase": "^6.2.0"
-  },
-  "devDependencies": {
-    "rollup": "^2.56.3"
   }
 }
