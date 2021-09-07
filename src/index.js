@@ -4,12 +4,12 @@ const ns        = '@wordpress/';
 const nsExclude = [ 'icons', 'interface' ];
 
 const external = {
-	'jquery'   : 'jQuery',
-	'lodash-es': 'lodash',
-	'lodash'   : 'lodash',
-	'moment'   : 'moment',
-	'react-dom': 'ReactDOM',
-	'react'    : 'React',
+	'jquery'   : 'window.jQuery',
+	'lodash-es': 'window.lodash',
+	'lodash'   : 'window.lodash',
+	'moment'   : 'window.moment',
+	'react-dom': 'window.ReactDOM',
+	'react'    : 'window.React',
 };
 
 const wordpressMatch = new RegExp( `^${ ns }(?!(${ nsExclude.join('|') })).*$` ); // /^@wordpress\/(?!(icons|interface)).*$/;
