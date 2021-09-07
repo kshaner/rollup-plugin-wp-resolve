@@ -1,7 +1,6 @@
 # WP Resolve
 
-🍣 A rollup plugin which automatically converts dependencies bundles with WordPress to external dependencies. This is inspired by the WordPress [dependency-extraction-webpack-plugin](https://github.com/WordPress/gutenberg/tree/trunk/packages/dependency-extraction-webpack-plugin) from wp-scripts, but for those of use who prefer rollup.
-
+🍣 A rollup plugin which automatically converts dependencies bundled with WordPress to external dependencies. This is inspired by the WordPress [dependency-extraction-webpack-plugin](https://github.com/WordPress/gutenberg/tree/trunk/packages/dependency-extraction-webpack-plugin) from wp-scripts, but for those of us who prefer rollup.
 
 **Note:**
 
