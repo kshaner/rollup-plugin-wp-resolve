@@ -1,5 +1,3 @@
-import camelcase from "camelcase";
-
 const ns        = '@wordpress/';
 const nsExclude = [ 'icons', 'interface' ];
 
@@ -14,7 +12,7 @@ const external = {
 
 const wordpressMatch = new RegExp( `^${ ns }(?!(${ nsExclude.join('|') })).*$` ); // /^@wordpress\/(?!(icons|interface)).*$/;
 
-const wpResolve = function() {
+export default function wpResolve() {
 	return {
 		name: 'wp-resolve',
 		options: ( options ) => {
@@ -52,7 +50,7 @@ const wpResolve = function() {
 
 				if ( wordpressMatch.test( id ) ) {
 					// convert @namespace/component-name to namespace.componentName
-					return camelcase( id ).replace( new RegExp( `^${ns}` ), 'wp.' ).replace( /\//g, '.' );
+					return id.replace( new RegExp( `^${ns}` ), 'wp.' ).replace( /\//g, '.' ).replace( /-([a-z])/g, ( _, letter ) => letter.toUpperCase() );
 				}
 			}
 
@@ -60,5 +58,3 @@ const wpResolve = function() {
 		}
 	}
 }
-
-export default wpResolve;

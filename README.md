@@ -57,3 +57,17 @@ import moment from 'moment';
 import ReactDOM from 'react-dom';
 import React from 'react';
 ```
+
+## Change log
+
+### 1.0.9
+
+* Remove commented out code
+### 1.0.8
+
+* Fix a bug where some wp modules would resolve incorrectly because of the camelcase algorithm (e.g. `import { __ } from @wordpress/i18n` would be mapped to `wp.i18N` and not `wp.i18n` )
+* Remove camelcase as a dependency since it was no longer used
+
+### 1.0.0
+
+* Initial Release
