@@ -35,7 +35,7 @@ export default {
 import { ToggleControl } from '@wordpress/components';
 import { useSelect } from '@wordpress/data';
 import { useBlockProps } from '@wordpress/block-editor';
-import ServerSideRender from '@wordpres/server-side-render';
+import ServerSideRender from '@wordpress/server-side-render';
 ```
 
 will resolve to:
